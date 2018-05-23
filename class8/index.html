@@ -1,0 +1,25 @@
+<html>
+    <head>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue"></script> 
+    </head>
+    <body>
+        <div id="app" class="conatiner">
+            <div class="data-area">
+                <ol>
+                    <li v-for="(user, index) in userList" :key="user.uuid">uuid: {{ user.uuid }} | name: {{ user.name }} | profession: {{ user.profession }} | password: {{ user.password }} | <a href="javascript:void(0);" @click="editUser(index)">Edit</a> | <a href="javascript:void(0);" @click="sendDelete(index)">Delete</a></li>
+                </ol>
+            </div>
+            <div class="form-area">
+                <input type="text" name="name" placeholder="name" v-model="form.name">
+                <input type="text" name="profession" placeholder="profession" v-model="form.profession">
+                <input type="password" name="password" placeholder="password" v-model="form.password">
+                <button @click="sendForm">Send</button>
+            </div>
+        </div>
+        
+        <!-- <script src="/static/vue-resource.js"></script> -->
+        <script src="/static/vueapp.js"></script>
+        
+    </body>
+</html>

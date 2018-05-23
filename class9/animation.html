@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Animated Web Banners With CSS3</title>
+        <meta charset="UTF-8" />
+<style>
+.sliding-banner {
+    white-space: nowrap;
+    animation: bannertext 10s linear infinite;
+}
+
+@keyframes bannertext {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+</style>
+    </head>
+    <body>
+<div class="sliding-banner">
+  This is a sliding banner
+<div/>
+    </body>
+</html>
