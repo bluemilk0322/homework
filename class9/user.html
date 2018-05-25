@@ -2,14 +2,36 @@
 <html lang="en">
     <head>
         <title>User Interface Example</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <meta charset="UTF-8" />
     </head>
     <body>
+        <script>
+            const socket = io('http://localhost:8080');
+            const setBottom = () => {
+                let myText_element = document.getElementById("myText");
+                let myText = myText_element.value;
+                if(yes.checked){
+                    let yes_element = document.getElementById("yes");
+                    let yes = yes_element.value;
+                    socket.emit('myText', { 'myText': myText });
+                    socket.emit('yes', { 'yes' : yes });
+                }
+                if(no.checked){
+                    let no_element = document.getElementById("no");
+                    let no = no_element.value;
+                    socket.emit('myText', { 'myText': myText });
+                    socket.emit('no', { 'no' : no });
+                }
+            };
+        </script>
 <h4>使用者介面範例</h4>
-輸入送到伺服器端：<input type="text" name="msg01" size="50">
-<input type="button" value="送出"></input>
-<br>
-<input type="radio" name="yesno" value="yes"> 滿意 <br>
-<input type="radio" name="yesno" value="no"> 不滿意
+輸入送到伺服器端：
+<input type="text" name="myText" id="myText" size="50" >
+<input type="button" value="送出" onclick="setBottom()"></input>
+    <br>
+    <input type="radio" name="yes" id="yes" value="yes"> 滿意 <br>
+    <input type="radio" name="no" id="no" value="no"> 不滿意
     </body>
 </html>
