@@ -3,7 +3,7 @@ const io = require('socket.io')(app);
 const fs = require('fs');
 const jquery = require('jquery');
 
-let  yee = "test1";
+let  yee = "I'm am a homework";
 
 function handler (req, res) {
   fs.readFile(__dirname + '/index.html',
@@ -33,6 +33,6 @@ io.on('connection', (socket) => {
   });
 });
 
-app.listen(8080, () => {
+app.listen(8082, () => {
     console.info("Server started.");
   });

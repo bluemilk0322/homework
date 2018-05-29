@@ -1,0 +1,12 @@
+<html>
+  <body>
+    Video: <a href="javascript:void(0);" onclick="changeVideo('test1.mp4');">アコギとかで弾いてみた</a> <a href="javascript:void(0);" onclick="changeVideo('test2.mp4');">unravel</a><br></br>
+    <video style="width: 700px;" id="videoelem" src="test1.mp4" controls></video>
+    <script>
+      var changeVideo = function(filename){
+        videoElem = document.getElementById('videoelem');
+        videoElem.src = filename;
+      }
+    </script>
+  </body>
+</html>

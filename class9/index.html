@@ -4,21 +4,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>
-        const socket = io('http://localhost:8080');
+        const socket = io('http://localhost:8082');
         socket.on('news',(data) => {
             console.log(data);
             $('#test').text(data.hello);
         });
     </script>
     <style>
-        /* .sliding-banner {
+        .sliding-banner {
             white-space: nowrap;
             animation: bannertext 10s linear infinite;
         }
         @keyframes bannertext {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
-        } */
+        }
     </style>
 </head>
 <body>
